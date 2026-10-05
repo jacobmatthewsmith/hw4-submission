@@ -478,3 +478,9 @@ All prompts I sent to the AI coding assistant, organized by problem. Prompts are
 > it's done i think
 
 [Needed to tell the assistant the push had finished, so it could verify the public repository and give me the final URL for Canvas.]
+
+**Follow-up:**
+
+> can you drop the links to the urls that someone can click on from the git hub folder? i.e. if someone opens those links what do they see
+
+[Needed to get clickable GitHub links for each deliverable and to know what a grader would see when opening each one.]

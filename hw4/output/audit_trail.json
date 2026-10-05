@@ -1,0 +1,28 @@
+[
+{
+  "time": "2026-10-05T11:05:01-04:00",
+  "run_id": "20261005-110501-90d8db",
+  "who": "guest",
+  "page": "/products",
+  "message_chars": 42,
+  "tool_calls": [
+    {
+      "time": "2026-10-05T11:05:03-04:00",
+      "tool": "check_stock",
+      "args": "{\"product\": \"Boola Boola tee\", \"size\": \"M\"}",
+      "result": "found | Boola Boola T Shirt has 15 in stock in M. | price=$32.00 | M=in_stock",
+      "ok": true,
+      "ms": 4
+    }
+  ],
+  "model_requests": 2,
+  "tokens": {
+    "input": 7657,
+    "output": 125
+  },
+  "products_shown": 1,
+  "results_title": "Boola Boola T Shirt",
+  "stop_reason": "completed",
+  "duration_ms": 4791
+}
+]

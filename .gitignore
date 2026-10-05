@@ -1,0 +1,6 @@
+# Repo root: the project lives in hw4/ (see hw4/.gitignore)
+data.zip
+.env
+.env.*
+.DS_Store
+.claude/

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Campus Customs: App Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+<style>
+  :root { --ink: #0a0a0a; --green: #39ff5a; --green-ink: #0a7a2a; --lime: #c8ff3a; --mint: #effff2; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--ink); font: 18px/1.6 "Courier Prime", "Courier New", monospace; background: #fff; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  header { background: var(--ink); color: #d7ffd9; padding: 36px 0 30px; }
+  header h1 { font: 24px/1.5 "Press Start 2P", monospace; color: var(--green); margin: 0 0 10px; }
+  header p { margin: 0; }
+  nav { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; }
+  nav a { color: var(--ink); background: var(--green); text-decoration: none; font-weight: 700; padding: 8px 14px; border: 2px solid var(--green); }
+  html { scroll-behavior: smooth; }
+  section { scroll-margin-top: 16px; padding: 44px 0 10px; border-bottom: 2px dashed #b9dcbf; }
+  h2 { font: 17px/1.5 "Press Start 2P", monospace; margin: 0 0 18px; }
+  h2 span { color: var(--green-ink); }
+  figure { margin: 0; }
+  img { display: block; width: 100%; height: auto; border: 3px solid var(--ink); box-shadow: 8px 8px 0 var(--green); }
+  figcaption { margin: 22px 0 0; padding: 14px 16px; background: var(--mint); border: 2px solid var(--ink); }
+  figcaption b { color: var(--green-ink); }
+  code { background: #fff; border: 1px solid #b9dcbf; padding: 0 4px; }
+  footer { padding: 30px 0 40px; font-size: 15px; color: #4a5a4d; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>CAMPUS CUSTOMS: APP CHECK</h1>
+      <p>Screenshots of the running Campus Customs website (React + Vite frontend, FastAPI + Pydantic AI backend), one for each check.</p>
+      <nav aria-label="Checks">
+        <a href="#inventory">Check 1: Chat inventory</a>
+        <a href="#search">Check 2: Search result cards</a>
+        <a href="#cart">Check 3: Shopping cart</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="inventory">
+      <h2><span>CHECK 1:</span> Chat checks an item's inventory (honest stock from the DB)</h2>
+      <figure>
+        <img src="app_check_images/inventory.png" alt="Basic Hoodie Big Yale product page with the BulldogBot chat answering that only 2 are left in XL" />
+        <figcaption>On the Basic Hoodie Big Yale page, the shopper asks "How many of this hoodie are left in XL?" and the assistant answers <b>"Only 2 are left in XL"</b>, with a product card showing the $68.00 price. This proves the stock answer is honest: the database row for this item (<code>inventory</code>: Basic Hoodie Big Yale, size XL) has a quantity of exactly <b>2</b>, and <code>catalogue.price</code> is $68.00.</figcaption>
+      </figure>
+    </section>
+
+    <section id="search">
+      <h2><span>CHECK 2:</span> Dynamic search result cards appear after a question</h2>
+      <figure>
+        <img src="app_check_images/search_results.png" alt="Products page showing Yale Hoodies results from the chat as product cards, with the chat panel open" />
+        <figcaption>After the shopper asks the chat <b>"Show me your hoodies"</b>, the page switches to a "From your chat with our assistant: Yale Hoodies, 23 items" view, with matching hoodie product cards (image, name, price, description). This shows the assistant returning structured product matches that the website renders as cards on the page, and each card links to that item's full product page.</figcaption>
+      </figure>
+    </section>
+
+    <section id="cart">
+      <h2><span>CHECK 3:</span> Usability feature: saved shopping cart</h2>
+      <figure>
+        <img src="app_check_images/cart.png" alt="Your bag page listing 2 Vintage Bulldog hoodies and 1 Boola Boola tee with a $168.00 subtotal after the site was reloaded" />
+        <figcaption>A guest added 2 Vintage Bulldog hoodies and a Boola Boola tee, and the site was then fully reloaded, as if they had left and come back. The bag still holds every item with the correct <b>$168.00</b> subtotal and the note "Saved on this browser, so it will still be here when you come back." This shows the cart persists between visits (logged-in shoppers' carts are saved to their account).</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <script>
+    // Section buttons: scroll smoothly, and still work in viewers that block #anchor navigation.
+    document.querySelectorAll('nav a[href^="#"]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var target = document.querySelector(a.getAttribute('href'));
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+  </script>
+
+  <footer class="wrap">Campus Customs · 57 Broadway, New Haven, CT · A fictional store built for a class project.</footer>
+</body>
+</html>

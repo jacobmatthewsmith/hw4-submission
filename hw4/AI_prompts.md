@@ -466,3 +466,9 @@ All prompts I sent to the AI coding assistant, organized by problem. Prompts are
 > can you give me step by step instructions for creating the github and giving you the link
 
 [Needed because this computer wasn't logged in to GitHub, so I asked for step-by-step instructions to create the repository (named hw4-submission) and push it myself.]
+
+**Follow-up:**
+
+> https://github.com/jacobmatthewsmith/hw4-submission.git
+
+[Needed to give the URL of the empty public repository I created, so the local repo could be connected to it for the push.]

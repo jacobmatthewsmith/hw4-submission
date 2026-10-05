@@ -460,3 +460,9 @@ All prompts I sent to the AI coding assistant, organized by problem. Prompts are
 > Final verification and handoff
 > Before pushing, check that the required structure is present, `.env.example` contains only placeholders, and the real `.env`, database, and product images are excluded from Git.
 > After pushing, provide the public GitHub repository URL that I should submit on Canvas.
+
+**Follow-up:**
+
+> can you give me step by step instructions for creating the github and giving you the link
+
+[Needed because this computer wasn't logged in to GitHub, so I asked for step-by-step instructions to create the repository (named hw4-submission) and push it myself.]
